@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 3rem;
+  }
+  
+  .details {
+    width: 28rem;
+  }
+  
+  .details form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .forgotPassword {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .forgotPassword a {
+    color: #676c71;
+    text-decoration: none;
+  }
+  
+  .forgotPassword a:hover {
+    text-decoration: underline;
+  }
+  

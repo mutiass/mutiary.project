@@ -1,0 +1,10 @@
+.rating {
+  display: flex;
+  align-items: center; /* Menjaga ikon bintang sejajar */
+  gap: 4px; /* Jarak antar bintang */
+}
+
+.star {
+  flex-shrink: 0; /* Mencegah ikon mengecil secara tidak proporsional */
+  object-fit: contain; /* Pastikan gambar tidak terdistorsi */
+}
