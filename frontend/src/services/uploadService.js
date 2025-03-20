@@ -23,7 +23,7 @@ const getImage = async event => {
   const files = event.target.files;
 
   if (!files || files.length <= 0) {
-    toast.warning('Upload file is nott selected!', 'File Upload');
+    toast.warning('Upload file is not selected!', 'File Upload');
     return null;
   }
 
