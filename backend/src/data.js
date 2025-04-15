@@ -4,7 +4,7 @@ export const sample_foods = [
     name: 'Pizza Pepperoni',
     cookTime: '10-20',
     price: 10,
-    favorite: false,
+    favorite: true,
     origins: ['italy'],
     stars: 4.5,
     imageUrl: 'food-1.jpg',
