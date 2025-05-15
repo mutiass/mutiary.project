@@ -29,13 +29,13 @@ const reducer = (state, action) => {
 
 export default function HomePage() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [isLoading, setIsLoading] = useState(true); // Tambahkan state loading
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
   const { foods, tags } = state;
   const { searchTerm, tag } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsLoading(true); // Set loading ke true sebelum fetching data
+    setIsLoading(true); // Set loading to true before fetching data
 
     getAllTags().then(tags => dispatch({ type: 'TAGS_LOADED', payload: tags }));
 
@@ -47,17 +47,17 @@ export default function HomePage() {
 
     loadFoods.then(foods => {
       dispatch({ type: 'FOODS_LOADED', payload: foods });
-      setIsLoading(false); // Set loading ke false setelah data selesai dimuat
+      setIsLoading(false); // Set loading to false after data is fetched
     });
   }, [searchTerm, tag]);
 
-  // Fungsi untuk reset pencarian & kembali ke tampilan awal HomePage
+  // Function to reset search & return to the initial HomePage view
   const resetSearch = () => {
     navigate('/');
-    setIsLoading(true); // Set loading ke true sebelum fetching ulang
+    setIsLoading(true); // Set loading to true before refetching data
     getAll().then(foods => {
       dispatch({ type: 'RESET_FOODS', payload: foods });
-      setIsLoading(false); // Set loading ke false setelah data selesai dimuat
+      setIsLoading(false); // Set loading to false after data is fetched
     });
   };
 
@@ -65,9 +65,9 @@ export default function HomePage() {
     <>
       <Search />
       <Tags tags={tags} />
-      {isLoading ? ( // Tampilkan loading jika sedang fetch
+      {isLoading ? ( // Show loading indicator while fetching
         <Loading />
-      ) : foods.length === 0 ? ( // Jika tidak loading dan data kosong, tampilkan NotFound
+      ) : foods.length === 0 ? ( // If not loading and no data, show NotFound
         <NotFound linkText="Reset Search" onReset={resetSearch} />
       ) : (
         <Thumbnails foods={foods} />
