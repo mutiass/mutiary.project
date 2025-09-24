@@ -31,7 +31,12 @@ export default function ForgotPasswordPage() {
         throw new Error(data.message || 'Failed to send reset link');
       }
 
-      setMessage('A password reset link has been sent to your email.');
+      setMessage(
+  'A password reset link has been sent to your email. ' +
+  'Please wait up to 10 minutes. If you don’t see it in your inbox, ' +
+  'please check your Spam or Junk folder.'
+);
+
     } catch (error) {
       console.error('Error sending reset email:', error);
       setErrorMessage(error.message || 'Something went wrong. Please try again.');
